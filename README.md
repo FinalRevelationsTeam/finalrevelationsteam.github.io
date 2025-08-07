@@ -1,1 +1,0 @@
-# finalrevelationsteam.github.io
