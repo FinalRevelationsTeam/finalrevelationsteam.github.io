@@ -119,7 +119,16 @@ export class FileNode {
         }
       } else {
         // direct child
-        this.children.push(new FileNode(nextSegment, undefined, fileData.file, this.depth + 1))
+        const newNode = new FileNode(nextSegment, undefined, fileData.file, this.depth + 1)
+
+        const content = fileData.file.content
+        if (content) {
+          const flatHeadings = extractHeadings(content)
+          newNode.headings = buildHeadingTree(flatHeadings)
+        }
+
+        this.children.push(newNode)
+
       }
 
       return
@@ -146,13 +155,6 @@ export class FileNode {
   // Add new file to tree
   add(file: QuartzPluginData) {
     this.insert({ file: file, path: simplifySlug(file.slug!).split("/") })
-  
-    // Only store headings if this node is a file
-    const content = file.content
-    if (content) {
-      const flatHeadings = extractHeadings(content)
-      this.headings = buildHeadingTree(flatHeadings)
-    }
   }
   
 
