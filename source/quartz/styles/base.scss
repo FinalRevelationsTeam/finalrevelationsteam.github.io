@@ -475,13 +475,13 @@ p {
   overflow-x: auto;
 
   & > table {
-    margin: 1rem;
-    padding: 1.5rem;
+    margin: 0.5rem;
+    padding: 1rem;
     border-collapse: collapse;
 
     th,
     td {
-      min-width: 75px;
+      min-width: 50px;
     }
 
     & > * {

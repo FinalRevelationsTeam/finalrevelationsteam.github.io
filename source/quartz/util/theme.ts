@@ -8,6 +8,7 @@ export interface ColorScheme {
   tertiary: string
   highlight: string
   textHighlight: string
+  number: string
 }
 
 interface Colors {

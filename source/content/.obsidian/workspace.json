@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Buffs.md",
+                "file": "Passives.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Buffs"
+              "title": "Passives"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Buffs.md",
+                "file": "Passives.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Buffs"
+              "title": "Backlinks for Passives"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Buffs.md",
+                "file": "Passives.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Buffs"
+              "title": "Outgoing links from Passives"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Buffs.md",
+                "file": "Passives.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Buffs"
+              "title": "Outline of Passives"
             }
           },
           {
@@ -160,13 +160,23 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "cc556fa164a050dc",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 794.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -182,15 +192,22 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
+    "Passives.md",
+    "Stats.md",
     "Buffs.md",
-    "Untitled.canvas",
-    "Skills.md",
     "Magic.md",
-    "Transformations.md",
+    "Factions.md",
+    "800px-Faction_Upgrade_Paths.webp",
+    "Traits.md",
+    "Items.md",
     "index.md",
+    "Technology.md",
+    "Races.md",
+    "Transformations.md",
+    "Skills.md",
+    "Untitled.canvas",
     "category-folder/Some note.md",
     "category-folder/index.md",
-    "Stats.md",
     "category-folder"
   ]
 }

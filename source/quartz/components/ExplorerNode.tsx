@@ -9,6 +9,8 @@ import {
   FilePath,
 } from "../util/path"
 
+import { ExplorerHeading } from "../plugins/extractHeadings"
+
 type OrderEntries = "sort" | "filter" | "map"
 
 export interface Options {
@@ -32,49 +34,6 @@ export type FolderState = {
   collapsed: boolean
 }
 
-export type HeadingNode = {
-  level: number
-  text: string
-}
-
-export type NestedHeading = {
-  text: string
-  children: NestedHeading[]
-}
-
-function extractHeadings(content: string): HeadingNode[] {
-  const headingRegex = /^#{1,3}\s+(.*?)\s*#*$/gm
-  const matches = [...content.matchAll(headingRegex)]
-  return matches.map((m) => ({
-    level: m[1].length,
-    text: m[2],
-  }))
-}
-
-function buildHeadingTree(headings: HeadingNode[]): NestedHeading[] {
-  const root: NestedHeading[] = []
-  const stack: NestedHeading[] = []
-
-  for (const heading of headings) {
-    const node: NestedHeading = { text: heading.text, children: [] }
-
-    while (stack.length > 0 && heading.level <= stack.length) {
-      stack.pop()
-    }
-
-    if (stack.length === 0) {
-      root.push(node)
-    } else {
-      stack[stack.length - 1].children.push(node)
-    }
-
-    stack.push(node)
-  }
-
-  return root
-}
-
-
 function getPathSegment(fp: FilePath | undefined, idx: number): string | undefined {
   if (!fp) {
     return undefined
@@ -90,7 +49,6 @@ export class FileNode {
   displayName: string
   file: QuartzPluginData | null
   depth: number
-  headings: NestedHeading[] = []
 
   constructor(slugSegment: string, displayName?: string, file?: QuartzPluginData, depth?: number) {
     this.children = []
@@ -99,8 +57,6 @@ export class FileNode {
     this.file = file ? clone(file) : null
     this.depth = depth ?? 0
   }
-
-  
 
   private insert(fileData: DataWrapper) {
     if (fileData.path.length === 0) {
@@ -119,16 +75,7 @@ export class FileNode {
         }
       } else {
         // direct child
-        const newNode = new FileNode(nextSegment, undefined, fileData.file, this.depth + 1)
-
-        const content = fileData.file.content
-        if (content) {
-          const flatHeadings = extractHeadings(content)
-          newNode.headings = buildHeadingTree(flatHeadings)
-        }
-
-        this.children.push(newNode)
-
+        this.children.push(new FileNode(nextSegment, undefined, fileData.file, this.depth + 1))
       }
 
       return
@@ -156,7 +103,6 @@ export class FileNode {
   add(file: QuartzPluginData) {
     this.insert({ file: file, path: simplifySlug(file.slug!).split("/") })
   }
-  
 
   /**
    * Filter FileNode tree. Behaves similar to `Array.prototype.filter()`, but modifies tree in place
@@ -218,28 +164,6 @@ type ExplorerNodeProps = {
   fullPath?: string
 }
 
-type HeadingTreeProps = {
-  headings: NestedHeading[]
-  depth?: number
-}
-
-function HeadingTree({ headings, depth = 0 }: HeadingTreeProps) {
-  return (
-    <ul style={{ paddingLeft: `${depth * 12}px`, marginTop: "4px" }}>
-      {headings.map((heading, idx) => (
-        <li key={idx} className="heading-item">
-          <span>{heading.text}</span>
-          {heading.children.length > 0 && (
-            <HeadingTree headings={heading.children} depth={depth + 1} />
-          )}
-        </li>
-      ))}
-    </ul>
-  )
-}
-
-
-
 export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodeProps) {
   // Get options
   const folderBehavior = opts.folderClickBehavior
@@ -252,18 +176,85 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
   return (
     <>
       {node.file ? (
-        <li key={node.file.slug}>
-          <a href={resolveRelative(fileData.slug!, node.file.slug!)} data-for={node.file.slug}>
+        // Single file node
+        <li key={node.file.slug} style={{ listStyle: 'none', margin: 0 }}>
+        {/* File link row */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '0.25rem 0',
+          }}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ marginRight: '0.5rem' }}
+          >
+            <path d="M6 2h9l5 5v15H6z" />
+            <polyline points="6 2 6 7 15 7" />
+          </svg>
+
+          <a
+            href={resolveRelative(fileData.slug!, node.file.slug!)}
+            data-for={node.file.slug}
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
             {node.displayName}
           </a>
+        </div>
 
-          {node.headings.length}
-          {node.headings.length > 0 && (
-            <div className="heading-tree">
-              <HeadingTree headings={node.headings} />
-            </div>
-          )}
-        </li>
+        {(node.file?.toc?.length ?? 0) > 0 && (
+          <div
+            style={{
+              // mimic your folder-outer
+              paddingLeft: node.depth === 0 ? '0' : '0', 
+            }}
+          >
+            <ul
+              style={{
+                listStyle: 'none',
+                margin: 0,
+                padding: 0,
+              }}
+              data-folderul={fullPath}
+            >
+              {node.file?.toc?.map((entry) => (
+                <li
+                  key={entry.slug}
+                  style={{
+                    padding: '0.125rem 0',
+                    paddingLeft: `${(entry.depth + 1) * 1.4}rem`,
+                    fontSize: `${1 - (entry.depth + 1) * 0.04}rem`,
+                  }}
+                  className={`depth-${entry.depth}`}
+                >
+                  <a
+                    href={`${resolveRelative(
+                      fileData.slug!,
+                      node.file!.slug!
+                    )}#${entry.slug}`}
+                    data-for={entry.slug}
+                    style={{
+                      color: 'inherit',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    {entry.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </li>
       ) : (
         <li>
           {node.name !== "" && (
