@@ -43,7 +43,7 @@ export type NestedHeading = {
 }
 
 function extractHeadings(content: string): HeadingNode[] {
-  const headingRegex = /^(#{1,3})\s+(.*)$/gm
+  const headingRegex = /^#{1,3}\s+(.*?)\s*#*$/gm
   const matches = [...content.matchAll(headingRegex)]
   return matches.map((m) => ({
     level: m[1].length,
