@@ -255,7 +255,7 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
             {node.displayName}
           </a>
 
-          {/* Render nested headings if available */}
+          {node.headings.length}
           {node.headings.length > 0 && (
             <div className="heading-tree">
               <HeadingTree headings={node.headings} />
