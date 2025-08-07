@@ -32,6 +32,49 @@ export type FolderState = {
   collapsed: boolean
 }
 
+export type HeadingNode = {
+  level: number
+  text: string
+}
+
+export type NestedHeading = {
+  text: string
+  children: NestedHeading[]
+}
+
+function extractHeadings(content: string): HeadingNode[] {
+  const headingRegex = /^(#{1,3})\s+(.*)$/gm
+  const matches = [...content.matchAll(headingRegex)]
+  return matches.map((m) => ({
+    level: m[1].length,
+    text: m[2],
+  }))
+}
+
+function buildHeadingTree(headings: HeadingNode[]): NestedHeading[] {
+  const root: NestedHeading[] = []
+  const stack: NestedHeading[] = []
+
+  for (const heading of headings) {
+    const node: NestedHeading = { text: heading.text, children: [] }
+
+    while (stack.length > 0 && heading.level <= stack.length) {
+      stack.pop()
+    }
+
+    if (stack.length === 0) {
+      root.push(node)
+    } else {
+      stack[stack.length - 1].children.push(node)
+    }
+
+    stack.push(node)
+  }
+
+  return root
+}
+
+
 function getPathSegment(fp: FilePath | undefined, idx: number): string | undefined {
   if (!fp) {
     return undefined
@@ -47,6 +90,7 @@ export class FileNode {
   displayName: string
   file: QuartzPluginData | null
   depth: number
+  headings: NestedHeading[] = []
 
   constructor(slugSegment: string, displayName?: string, file?: QuartzPluginData, depth?: number) {
     this.children = []
@@ -55,6 +99,8 @@ export class FileNode {
     this.file = file ? clone(file) : null
     this.depth = depth ?? 0
   }
+
+  
 
   private insert(fileData: DataWrapper) {
     if (fileData.path.length === 0) {
@@ -100,7 +146,15 @@ export class FileNode {
   // Add new file to tree
   add(file: QuartzPluginData) {
     this.insert({ file: file, path: simplifySlug(file.slug!).split("/") })
+  
+    // Only store headings if this node is a file
+    const content = file.content
+    if (content) {
+      const flatHeadings = extractHeadings(content)
+      this.headings = buildHeadingTree(flatHeadings)
+    }
   }
+  
 
   /**
    * Filter FileNode tree. Behaves similar to `Array.prototype.filter()`, but modifies tree in place
@@ -162,6 +216,28 @@ type ExplorerNodeProps = {
   fullPath?: string
 }
 
+type HeadingTreeProps = {
+  headings: NestedHeading[]
+  depth?: number
+}
+
+function HeadingTree({ headings, depth = 0 }: HeadingTreeProps) {
+  return (
+    <ul style={{ paddingLeft: `${depth * 12}px`, marginTop: "4px" }}>
+      {headings.map((heading, idx) => (
+        <li key={idx} className="heading-item">
+          <span>{heading.text}</span>
+          {heading.children.length > 0 && (
+            <HeadingTree headings={heading.children} depth={depth + 1} />
+          )}
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+
+
 export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodeProps) {
   // Get options
   const folderBehavior = opts.folderClickBehavior
@@ -174,11 +250,17 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
   return (
     <>
       {node.file ? (
-        // Single file node
         <li key={node.file.slug}>
           <a href={resolveRelative(fileData.slug!, node.file.slug!)} data-for={node.file.slug}>
             {node.displayName}
           </a>
+
+          {/* Render nested headings if available */}
+          {node.headings.length > 0 && (
+            <div className="heading-tree">
+              <HeadingTree headings={node.headings} />
+            </div>
+          )}
         </li>
       ) : (
         <li>
