@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Buffs.md",
-                "mode": "source",
+                "file": "Transformations.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Buffs"
+              "title": "Transformations"
             }
           }
         ]
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Buffs.md",
+                "file": "Transformations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Buffs"
+              "title": "Outgoing links from Transformations"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Buffs.md",
+                "file": "Transformations.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Buffs"
+              "title": "Outline of Transformations"
             }
           },
           {
@@ -172,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -192,28 +192,28 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
-    "Traits.md",
-    "Buffs.md",
     "Skills.md",
-    "Pasted image 20250807225029.png",
-    "Pasted image 20250807224951.png",
-    "Pasted image 20250807224941.png",
-    "Pasted image 20250807224920.png",
-    "Pasted image 20250807224901.png",
-    "Pasted image 20250807224854.png",
-    "Pasted image 20250807224843.png",
-    "Pasted image 20250807224834.png",
-    "Pasted image 20250807224830.png",
-    "Pasted image 20250807224801.png",
-    "Races.md",
-    "Passives.md",
     "Stats.md",
-    "Magic.md",
+    "Transformations.md",
+    "Passives.md",
+    "Buffs.md",
+    "Traits.md",
+    "Races.md",
+    "Pasted image 20250808172033.png",
+    "Pasted image 20250808172026.png",
+    "Pasted image 20250808172018.png",
+    "Pasted image 20250808172008.png",
+    "Pasted image 20250808172003.png",
+    "Pasted image 20250808171959.png",
+    "Pasted image 20250808171952.png",
+    "Pasted image 20250808171949.png",
+    "Pasted image 20250808171945.png",
     "Factions.md",
+    "Pasted image 20250808165457.png",
+    "Magic.md",
     "Items.md",
     "index.md",
     "Technology.md",
-    "Transformations.md",
     "Untitled.canvas",
     "category-folder/Some note.md",
     "category-folder/index.md",

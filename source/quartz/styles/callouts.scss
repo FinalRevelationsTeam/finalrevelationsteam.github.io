@@ -135,6 +135,28 @@
     background-origin: border-box;
   }  
 
+  &[data-callout="race"] {
+    --color: #6967d4;
+
+    border: 16px solid transparent;
+    border-image: url("static/ui_dbz_all.png") 16 round;
+
+    --background-color: #040404;
+    background-image: linear-gradient(rgb(24, 24, 44), #040404, #040404);
+    background-origin: border-box;
+  }  
+
+  &[data-callout="skill"] {
+    --color: #51cf62;
+
+    border: 16px solid transparent;
+    border-image: url("static/ui_dbz_all.png") 16 round;
+
+    --background-color: #040404;
+    background-image: linear-gradient(rgb(24, 24, 44), #040404, #040404);
+    background-origin: border-box;
+  }  
+
   &.is-collapsed > .callout-title > .fold-callout-icon {
     transform: rotateZ(-90deg);
   }
@@ -253,6 +275,70 @@
 }
 
 .callout[data-callout="trait"] .callout-title-inner p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; // optional spacing between image and text
+  margin: 0;
+  text-decoration: underline;
+}
+
+.callout[data-callout="race"] .callout-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color);
+  margin-bottom: 0.5rem;
+
+  --icon-size: 0px;
+
+  align-items: center;
+}
+
+.callout[data-callout="race"] .callout-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.callout[data-callout="race"] img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
+  object-fit: contain;
+}
+
+.callout[data-callout="race"] .callout-title-inner p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; // optional spacing between image and text
+  margin: 0;
+  text-decoration: underline;
+}
+
+.callout[data-callout="skill"] .callout-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color);
+  margin-bottom: 0.5rem;
+
+  --icon-size: 0px;
+
+  align-items: center;
+}
+
+.callout[data-callout="skill"] .callout-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.callout[data-callout="skill"] img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
+  object-fit: contain;
+}
+
+.callout[data-callout="skill"] .callout-title-inner p {
   display: flex;
   align-items: center;
   gap: 0.5rem; // optional spacing between image and text
