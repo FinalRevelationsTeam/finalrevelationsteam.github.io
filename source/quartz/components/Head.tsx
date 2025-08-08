@@ -40,6 +40,7 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1" type="application/javascript" spa-preserve></script>
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}

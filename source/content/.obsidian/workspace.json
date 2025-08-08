@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Passives.md",
+                "file": "Buffs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Passives"
+              "title": "Buffs"
             }
           }
         ]
@@ -172,7 +172,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -192,17 +192,27 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
+    "Pasted image 20250807225029.png",
+    "Pasted image 20250807224951.png",
+    "Pasted image 20250807224941.png",
+    "Pasted image 20250807224920.png",
+    "Pasted image 20250807224901.png",
+    "Pasted image 20250807224854.png",
+    "Pasted image 20250807224843.png",
+    "Pasted image 20250807224834.png",
+    "Pasted image 20250807224830.png",
+    "Pasted image 20250807224801.png",
+    "Pasted image 20250807224748.png",
+    "Races.md",
     "Passives.md",
     "Stats.md",
     "Buffs.md",
     "Magic.md",
     "Factions.md",
-    "800px-Faction_Upgrade_Paths.webp",
     "Traits.md",
     "Items.md",
     "index.md",
     "Technology.md",
-    "Races.md",
     "Transformations.md",
     "Skills.md",
     "Untitled.canvas",

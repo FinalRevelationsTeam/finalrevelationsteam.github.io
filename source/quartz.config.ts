@@ -1,5 +1,6 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import { ChartBlockPlugin } from "./quartz/plugins/transformers/ChartBlockPlugin"
 
 /**
  * Quartz 4.0 Configuration
@@ -68,6 +69,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
+      ChartBlockPlugin(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
