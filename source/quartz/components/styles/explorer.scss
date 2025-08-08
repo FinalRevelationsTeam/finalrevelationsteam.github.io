@@ -179,3 +179,63 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
   // remove default margin from li
   margin: 0;
 }
+
+.file-container {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  margin-bottom: 0.25rem;
+
+  & .file-title {
+    color: var(--secondary);
+    font-family: var(--headerFont);
+    font-size: 0.95rem;
+    font-weight: $semiBoldWeight;
+    line-height: 1.5rem;
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+
+  & .file-title:hover {
+    color: var(--tertiary);
+  }
+
+  & .file-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+
+  & .file-icon {
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+  }
+
+  & .file-button[aria-expanded="false"] .file-icon {
+    transform: rotate(-90deg);
+  }
+
+  & .file-button:hover .file-icon {
+    color: var(--tertiary);
+  }
+}
+
+.file-outer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-in-out;
+  overflow: hidden;
+
+  &.open {
+    grid-template-rows: 1fr;
+  }
+
+  > ul {
+    overflow: hidden;
+  }
+}
+

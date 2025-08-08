@@ -7,6 +7,9 @@ html {
   text-size-adjust: none;
   overflow-x: hidden;
   width: 100vw;
+
+  --background-color: #040404;
+    background-image: linear-gradient(rgb(24, 24, 44), #040404, #040404);
 }
 
 body,

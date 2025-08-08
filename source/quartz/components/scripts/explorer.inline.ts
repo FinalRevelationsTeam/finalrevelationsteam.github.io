@@ -56,47 +56,104 @@ function setupExplorer() {
   const explorer = document.getElementById("explorer")
   if (!explorer) return
 
+  // Setup folder collapse behavior
+
+  
   if (explorer.dataset.behavior === "collapse") {
-    for (const item of document.getElementsByClassName(
-      "folder-button",
-    ) as HTMLCollectionOf<HTMLElement>) {
+    const folderButtons = document.getElementsByClassName("folder-button") as HTMLCollectionOf<HTMLElement>
+    for (const item of folderButtons) {
       item.addEventListener("click", toggleFolder)
       window.addCleanup(() => item.removeEventListener("click", toggleFolder))
     }
   }
+  
 
+  // Setup file collapse behavior
+  const fileButtons = document.querySelectorAll(".file-button")
+  fileButtons.forEach((btn) => {
+    const handler = (evt) => {
+      evt.stopPropagation()
+      const filePath = btn.getAttribute("data-filepath")
+      const content = document.querySelector(`.file-outer[data-fileul="${filePath}"]`)
+      if (content) {
+        const isOpen = content.classList.toggle("open")
+        content.classList.toggle("collapsed", !isOpen)
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false")
+    
+        toggleCollapsedByPath(currentExplorerState, filePath!)
+        localStorage.setItem("fileTree", JSON.stringify(currentExplorerState))
+      }
+    }
+    
+    btn.addEventListener("click", handler)
+    window.addCleanup(() => btn.removeEventListener("click", handler))    
+  })
+
+  // Expand current file node if it's the active page
+  const currentSlug = window.location.pathname.replace(/\/$/, "")
+  const allFileNodes = document.querySelectorAll(`.file-outer[data-fileul]`)
+  for (const node of allFileNodes) {
+    const filePath = node.getAttribute("data-fileul")
+    if (!filePath) continue
+
+    const resolvedPath = new URL(filePath, window.location.origin).pathname.replace(/\/$/, "")
+    if (currentSlug.endsWith(resolvedPath)) {
+      node.classList.add("open")
+      node.classList.remove("collapsed")
+
+      // Update explorer state
+      toggleCollapsedByPath(currentExplorerState, filePath)
+
+      // Update toggle button state
+      const toggleBtn = document.querySelector(`.file-button[data-filepath="${filePath}"]`)
+      if (toggleBtn) {
+        toggleBtn.setAttribute("aria-expanded", "true")
+      }
+
+      // Expand parent folders if needed
+      let parent = node.parentElement
+      while (parent) {
+        if (parent.classList.contains("folder-outer")) {
+          parent.classList.add("open")
+        }
+        parent = parent.parentElement
+      }
+    }
+  }
+
+  // Setup explorer toggle button
   explorer.addEventListener("click", toggleExplorer)
   window.addCleanup(() => explorer.removeEventListener("click", toggleExplorer))
 
-  // Set up click handlers for each folder (click handler on folder "icon")
-  for (const item of document.getElementsByClassName(
-    "folder-icon",
-  ) as HTMLCollectionOf<HTMLElement>) {
+  // Setup folder icon click behavior
+  const folderIcons = document.getElementsByClassName("folder-icon") as HTMLCollectionOf<HTMLElement>
+  for (const item of folderIcons) {
     item.addEventListener("click", toggleFolder)
     window.addCleanup(() => item.removeEventListener("click", toggleFolder))
   }
 
-  // Get folder state from local storage
+  // Load folder state from localStorage
   const storageTree = localStorage.getItem("fileTree")
   const useSavedFolderState = explorer?.dataset.savestate === "true"
   const oldExplorerState: FolderState[] =
     storageTree && useSavedFolderState ? JSON.parse(storageTree) : []
   const oldIndex = new Map(oldExplorerState.map((entry) => [entry.path, entry.collapsed]))
+
   const newExplorerState: FolderState[] = explorer.dataset.tree
     ? JSON.parse(explorer.dataset.tree)
     : []
-  currentExplorerState = []
-  for (const { path, collapsed } of newExplorerState) {
-    currentExplorerState.push({ path, collapsed: oldIndex.get(path) ?? collapsed })
-  }
 
-  currentExplorerState.map((folderState) => {
-    const folderLi = document.querySelector(
-      `[data-folderpath='${folderState.path}']`,
-    ) as MaybeHTMLElement
+  currentExplorerState = newExplorerState.map(({ path, collapsed }) => ({
+    path,
+    collapsed: oldIndex.get(path) ?? collapsed,
+  }))
+
+  // Apply folder state
+  currentExplorerState.forEach(({ path, collapsed }) => {
+    const folderLi = document.querySelector(`[data-folderpath='${path}']`) as MaybeHTMLElement
     const folderUl = folderLi?.parentElement?.nextElementSibling as MaybeHTMLElement
     if (folderUl) {
-      setFolderState(folderUl, folderState.collapsed)
+      setFolderState(folderUl, collapsed)
     }
   })
 }

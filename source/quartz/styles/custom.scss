@@ -3,3 +3,12 @@
 i, em {
     color: var(--tertiary);
 }
+
+.file-outer.collapsed {
+    display: none;
+}
+  
+.file-outer.open {
+    display: block;
+}
+

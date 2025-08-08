@@ -15,7 +15,7 @@
               "state": {
                 "file": "Buffs.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Buffs"
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Passives.md",
+                "file": "Buffs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Passives"
+              "title": "Outgoing links from Buffs"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Passives.md",
+                "file": "Buffs.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Passives"
+              "title": "Outline of Buffs"
             }
           },
           {
@@ -172,11 +172,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 794.5
+    "width": 481.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,6 +192,9 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
+    "Traits.md",
+    "Buffs.md",
+    "Skills.md",
     "Pasted image 20250807225029.png",
     "Pasted image 20250807224951.png",
     "Pasted image 20250807224941.png",
@@ -202,19 +205,15 @@
     "Pasted image 20250807224834.png",
     "Pasted image 20250807224830.png",
     "Pasted image 20250807224801.png",
-    "Pasted image 20250807224748.png",
     "Races.md",
     "Passives.md",
     "Stats.md",
-    "Buffs.md",
     "Magic.md",
     "Factions.md",
-    "Traits.md",
     "Items.md",
     "index.md",
     "Technology.md",
     "Transformations.md",
-    "Skills.md",
     "Untitled.canvas",
     "category-folder/Some note.md",
     "category-folder/index.md",

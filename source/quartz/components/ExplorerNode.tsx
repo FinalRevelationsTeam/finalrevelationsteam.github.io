@@ -177,84 +177,67 @@ export function ExplorerNode({ node, opts, fullPath, fileData }: ExplorerNodePro
     <>
       {node.file ? (
         // Single file node
-        <li key={node.file.slug} style={{ listStyle: 'none', margin: 0 }}>
-        {/* File link row */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0.25rem 0',
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{ marginRight: '0.5rem' }}
-          >
-            <path d="M6 2h9l5 5v15H6z" />
-            <polyline points="6 2 6 7 15 7" />
-          </svg>
-
-          <a
-            href={resolveRelative(fileData.slug!, node.file.slug!)}
-            data-for={node.file.slug}
-            style={{ color: 'inherit', textDecoration: 'none' }}
-          >
-            {node.displayName}
-          </a>
-        </div>
-
-        {(node.file?.toc?.length ?? 0) > 0 && (
-          <div
-            style={{
-              // mimic your folder-outer
-              paddingLeft: node.depth === 0 ? '0' : '0', 
-            }}
-          >
-            <ul
-              style={{
-                listStyle: 'none',
-                margin: 0,
-                padding: 0,
-              }}
-              data-folderul={fullPath}
+        <li key={node.file.slug}>
+          <div class="file-container">
+            {/* Collapse button */}
+            <button
+              class="file-button"
+              data-filepath={node.file.slug}
+              aria-expanded="false"
             >
-              {node.file?.toc?.map((entry) => (
-                <li
-                  key={entry.slug}
-                  style={{
-                    padding: '0.125rem 0',
-                    paddingLeft: `${(entry.depth + 1) * 1.4}rem`,
-                    fontSize: `${1 - (entry.depth + 1) * 0.04}rem`,
-                  }}
-                  className={`depth-${entry.depth}`}
-                >
-                  <a
-                    href={`${resolveRelative(
-                      fileData.slug!,
-                      node.file!.slug!
-                    )}#${entry.slug}`}
-                    data-for={entry.slug}
-                    style={{
-                      color: 'inherit',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    {entry.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="5 8 14 8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="file-icon"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+
+            {/* Link to file */}
+            <a
+              href={resolveRelative(fileData.slug!, node.file.slug!)}
+              data-for={node.file.slug}
+              class="file-title"
+            >
+              {node.displayName}
+            </a>
           </div>
-        )}
-      </li>
+
+          {/* Collapsible TOC */}
+          {(node.file?.toc?.length ?? 0) > 0 && (
+            <div class="file-outer collapsed" data-fileul={node.file.slug}>
+              <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+                {node.file.toc.map((entry) => (
+                  <li
+                    key={entry.slug}
+                    style={{
+                      padding: '0.125rem 0',
+                      paddingLeft: `${(entry.depth + 1) * 1.4}rem`,
+                      fontSize: `${1 - (entry.depth + 1) * 0.04}rem`,
+                    }}
+                    className={`depth-${entry.depth}`}
+                  >
+                    <a
+                      href={`${resolveRelative(fileData.slug!, node.file!.slug!)}#${entry.slug}`}
+                      data-for={entry.slug}
+                      style={{ color: 'inherit', textDecoration: 'none' }}
+                    >
+                      {entry.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
       ) : (
         <li>
           {node.name !== "" && (

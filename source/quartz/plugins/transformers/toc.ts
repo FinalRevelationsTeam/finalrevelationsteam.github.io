@@ -34,29 +34,48 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
         () => {
           return async (tree: Root, file) => {
             const display = file.data.frontmatter?.enableToc ?? opts.showByDefault
-            if (display) {
-              slugAnchor.reset()
-              const toc: TocEntry[] = []
-              let highestDepth: number = opts.maxDepth
-              visit(tree, "heading", (node) => {
-                if (node.depth <= opts.maxDepth) {
-                  const text = toString(node)
-                  highestDepth = Math.min(highestDepth, node.depth)
-                  toc.push({
-                    depth: node.depth,
-                    text,
-                    slug: slugAnchor.slug(text),
-                  })
-                }
-              })
+            if (!display) return
 
-              if (toc.length > 0 && toc.length > opts.minEntries) {
-                file.data.toc = toc.map((entry) => ({
-                  ...entry,
-                  depth: entry.depth - highestDepth,
-                }))
-                file.data.collapseToc = opts.collapseByDefault
+            slugAnchor.reset()
+            const toc: TocEntry[] = []
+            let highestDepth: number = opts.maxDepth
+
+            visit(tree, "heading", (node) => {
+              if (node.depth <= opts.maxDepth) {
+                const text = toString(node)
+                highestDepth = Math.min(highestDepth, node.depth)
+                toc.push({
+                  depth: node.depth,
+                  text,
+                  slug: slugAnchor.slug(text),
+                })
               }
+            })
+
+            visit(tree, "blockquote", (node) => {
+              const firstChild = node.children?.[0]
+              if (firstChild?.type === "paragraph") {
+                const paragraphText = toString(firstChild).trim()
+                const match = paragraphText.match(/^\[\!(\w+)\]\s+(.*)/)
+                if (match) {
+                  const [, calloutType, calloutTitle] = match
+                  if (calloutTitle) {
+                    toc.push({
+                      depth: opts.maxDepth, // or a fixed depth like 2
+                      text: calloutTitle,
+                      slug: slugAnchor.slug(calloutTitle),
+                    })
+                  }
+                }
+              }
+            })
+
+            if (toc.length > opts.minEntries) {
+              file.data.toc = toc.map((entry) => ({
+                ...entry,
+                depth: entry.depth - highestDepth,
+              }))
+              file.data.collapseToc = opts.collapseByDefault
             }
           }
         },
@@ -64,6 +83,7 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
     },
   }
 }
+
 
 declare module "vfile" {
   interface DataMap {

@@ -113,6 +113,28 @@
     --callout-icon: var(--callout-icon-quote);
   }
 
+  &[data-callout="buff"] {
+    --color: #cfc351;
+
+    border: 16px solid transparent;
+    border-image: url("static/ui_dbz_all.png") 16 round;
+
+    --background-color: #040404;
+    background-image: linear-gradient(rgb(24, 24, 44), #040404, #040404);
+    background-origin: border-box;
+  }  
+
+  &[data-callout="trait"] {
+    --color: #cf7951;
+
+    border: 16px solid transparent;
+    border-image: url("static/ui_dbz_all.png") 16 round;
+
+    --background-color: #040404;
+    background-image: linear-gradient(rgb(24, 24, 44), #040404, #040404);
+    background-origin: border-box;
+  }  
+
   &.is-collapsed > .callout-title > .fold-callout-icon {
     transform: rotateZ(-90deg);
   }
@@ -120,12 +142,26 @@
 
 .callout-title {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 5px;
   padding: 1rem 0;
   color: var(--color);
 
   --icon-size: 18px;
+
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
 
   & .fold-callout-icon {
     transition: transform 0.15s ease;
@@ -159,4 +195,67 @@
   .callout-title-inner {
     font-weight: $semiBoldWeight;
   }
+}
+.callout[data-callout="buff"] .callout-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color);
+  margin-bottom: 0.5rem;
+
+  --icon-size: 0px;
+
+  align-items: center;
+}
+
+.callout[data-callout="buff"] .callout-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.callout[data-callout="buff"] img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
+  object-fit: contain;
+}
+
+.callout[data-callout="buff"] .callout-title-inner p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; // optional spacing between image and text
+  margin: 0;
+  text-decoration: underline;
+}
+
+.callout[data-callout="trait"] .callout-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--color);
+  margin-bottom: 0.5rem;
+
+  --icon-size: 0px;
+
+  align-items: center;
+}
+
+.callout[data-callout="trait"] .callout-content {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.callout[data-callout="trait"] img {
+  width: 64px;
+  height: 64px;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges; /* fallback for some browsers */
+  object-fit: contain;
+}
+
+.callout[data-callout="trait"] .callout-title-inner p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; // optional spacing between image and text
+  margin: 0;
+  text-decoration: underline;
 }
