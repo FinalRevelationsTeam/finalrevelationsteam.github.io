@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Transformations.md",
-                "mode": "preview",
+                "file": "Current Story.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Transformations"
+              "title": "Current Story"
             }
           }
         ]
@@ -180,6 +180,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -192,24 +193,26 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
+    "Pasted image 20251002155431.png",
+    "Pasted image 20251002155402.png",
+    "Pasted image 20251002155331.png",
+    "Pasted image 20251002155206.png",
+    "Pasted image 20251002155053.png",
+    "Pasted image 20251002155033.png",
+    "Factions.md",
+    "Races.md",
+    "Transformations.md",
+    "Pasted image 20250808172033.png",
+    "Current Story.md",
+    "Passives.md",
     "Skills.md",
     "Stats.md",
-    "Transformations.md",
-    "Passives.md",
     "Buffs.md",
     "Traits.md",
-    "Races.md",
-    "Pasted image 20250808172033.png",
     "Pasted image 20250808172026.png",
     "Pasted image 20250808172018.png",
     "Pasted image 20250808172008.png",
     "Pasted image 20250808172003.png",
-    "Pasted image 20250808171959.png",
-    "Pasted image 20250808171952.png",
-    "Pasted image 20250808171949.png",
-    "Pasted image 20250808171945.png",
-    "Factions.md",
-    "Pasted image 20250808165457.png",
     "Magic.md",
     "Items.md",
     "index.md",
