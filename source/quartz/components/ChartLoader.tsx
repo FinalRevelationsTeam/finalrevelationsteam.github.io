@@ -1,6 +1,7 @@
 import { QuartzComponent } from "./types"
 export const ChartLoader: QuartzComponent = () => null
 
+
 ChartLoader.afterDOMLoaded = `
   function renderCharts() {
     if (typeof window.Chart !== "function") {

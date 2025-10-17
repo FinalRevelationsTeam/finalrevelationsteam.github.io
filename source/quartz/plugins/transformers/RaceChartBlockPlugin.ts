@@ -39,6 +39,14 @@ function parseRaceChartBlock(text: string): {
   return { bpm, anger, chart }
 }
 
+function generateChartId() {
+  return "race-chart-" + Math.random().toString(36).slice(2, 10)
+}
+
+const chartId = generateChartId()
+const bpId = `bp-toggle-${chartId}`
+const angerId = `anger-toggle-${chartId}`
+
 export const RaceChartBlockPlugin: QuartzTransformerPlugin = () => ({
   name: "RaceChartBlockPlugin",
   markdownPlugins() {
@@ -55,20 +63,21 @@ export const RaceChartBlockPlugin: QuartzTransformerPlugin = () => ({
           const html = `
 <canvas
   class="chart-block"
-  id="race-chart"
+  id="${chartId}"
   data-chart='${chartJson}'
   data-config='${configJson}'
   width="400"
   height="200"
 ></canvas>
 <div class="race-stats-controls">
-<center>
-  <label><input type="checkbox" id="bp-toggle" />×BP</label>
-  <br>
-  <label><input type="checkbox" id="anger-toggle" />×Anger</label>
-</center>
+  <center>
+    <label><input type="checkbox" id="${bpId}" checked />×BP</label>
+    <br>
+    <label><input type="checkbox" id="${angerId}" checked />×Anger</label>
+  </center>
 </div>
 `.trim()
+
 
           parent.children[index] = {
             type: "html",

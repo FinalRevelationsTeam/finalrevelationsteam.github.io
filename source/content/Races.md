@@ -33,6 +33,8 @@
 > [!race] ![[Pasted image 20250808172026.png]] Saiyan  
 > ```RaceChart
 > type: bar
+> bpm: 2
+> anger: 1.5
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -60,6 +62,8 @@
 > [!race] ![[Pasted image 20250808172018.png]] Namekian  
 > ```RaceChart
 > type: bar
+> bpm: 1.9
+> anger: 1.3
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -85,8 +89,10 @@
 
 ## Kaio
 > [!race] ![[Pasted image 20250808172008.png]] Kaio  
-> ```chart
+> ```RaceChart
 > type: bar
+> bpm: 2
+> anger: 1.3
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -114,6 +120,8 @@
 > [!race] ![[Pasted image 20250808172003.png]] Demon  
 > ```RaceChart
 > type: bar
+> bpm: 2
+> anger: 1.4
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -141,6 +149,8 @@
 > [!race] ![[Pasted image 20250808171959.png]] Tuffle  
 > ```RaceChart
 > type: bar
+> bpm: 1.6
+> anger: 1.4
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -169,6 +179,8 @@
 > [!race] ![[Pasted image 20250808171949.png]] Changeling  
 > ```RaceChart
 > type: bar
+> bpm: 2.3
+> anger: 1.2
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -196,6 +208,8 @@
 > [!race] ![[Pasted image 20250808171952.png]] Oni  
 > ```RaceChart
 > type: bar
+> bpm: 1.9
+> anger: 2
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -223,6 +237,8 @@
 > [!race] ![[Pasted image 20250808171945.png]] Makyo  
 > ```RaceChart
 > type: bar
+> bpm: 2
+> anger: 1.4
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD

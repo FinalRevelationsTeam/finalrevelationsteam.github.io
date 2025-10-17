@@ -5,13 +5,13 @@ import { QuartzComponent } from "./types"
 export const RaceChartLoader: QuartzComponent = () => null
 
 RaceChartLoader.afterDOMLoaded = `
-  (function() {
-    console.log("🏁 RaceChartLoader start, Chart:", window.Chart);
+(function() {
+  console.log("🏁 RaceChartLoader start, Chart:", window.Chart);
+  if (!window.Chart) return;
 
-    const canvas = document.getElementById("race-chart");
-    if (!canvas || !window.Chart) return;
-
-    const rawConfig   = JSON.parse(canvas.dataset.chart);
+  const canvases = document.querySelectorAll("canvas.chart-block");
+  canvases.forEach((canvas) => {
+    const rawConfig = JSON.parse(canvas.dataset.chart);
     const { bpm, anger } = JSON.parse(canvas.dataset.config);
 
     // stash original data once
@@ -26,7 +26,6 @@ RaceChartLoader.afterDOMLoaded = `
     let chartInstance;
 
     function initOrUpdate(newData) {
-      console.log("🔨 initOrUpdate – data:", newData);
       const bg = rawConfig.backgroundColor || 'rgba(54,162,235,0.5)';
       const bd = rawConfig.borderColor    || 'rgba(54,162,235,1)';
       const cfg = {
@@ -46,44 +45,50 @@ RaceChartLoader.afterDOMLoaded = `
         options: {
           responsive: true,
           plugins: {
-            legend: {
-              display: false
-            }
+            legend: { display: false }
           },
           scales: {
-            y: {
-              suggestedMin: 1,
-              suggestedMax: 10
-            }
+            y: { suggestedMin: 1, suggestedMax: 10 }
           }
         }
       };
-
+    
       if (chartInstance) {
-        chartInstance.data.datasets[0].data = newData;
-        chartInstance.update("none");
-      } else {
-        console.log("🔨 Creating Chart.js instance with config:", cfg);
-        chartInstance = new Chart(canvas, cfg);
-        chartInstance.update("none");
+        chartInstance.destroy(); // 💥 destroy the old chart
       }
+    
+      chartInstance = new Chart(canvas, cfg);
+      chartInstance.update("none");
     }
+    
 
     function renderRaceChart() {
-      const useBpm   = !!document.getElementById("bp-toggle")?.checked;
-      const useAnger = !!document.getElementById("anger-toggle")?.checked;
+      const bpToggle = canvas.parentElement.querySelector("input[id^='bp-toggle']");
+      const angerToggle = canvas.parentElement.querySelector("input[id^='anger-toggle']");
+      const useBpm = bpToggle?.checked;
+      const useAnger = angerToggle?.checked;
       const multiplier = (useBpm ? bpm : 1) * (useAnger ? anger : 1);
-
-      const scaled = originalData.map(v => {
+    
+      const exemptLabels = ["SPD", "RCV", "RGN"];
+      const labels = rawConfig.labels || [];
+    
+      const scaled = originalData.map((v, i) => {
+        const label = labels[i];
         const n = parseFloat(v);
-        return Number.isFinite(n) ? n * multiplier : 0;
+        const shouldScale = !exemptLabels.includes(label);
+        return Number.isFinite(n) ? n * (shouldScale ? multiplier : 1) : 0;
       });
-      console.log("Rendering with multiplier", multiplier, "scaled:", scaled);
+    
       initOrUpdate(scaled);
     }
+    
 
     renderRaceChart();
-    document.getElementById("bp-toggle")?.addEventListener("change", renderRaceChart);
-    document.getElementById("anger-toggle")?.addEventListener("change", renderRaceChart);
-  })();
+
+    const bpToggle = canvas.parentElement.querySelector("input[id^='bp-toggle']");
+    const angerToggle = canvas.parentElement.querySelector("input[id^='anger-toggle']");
+    bpToggle?.addEventListener("change", renderRaceChart);
+    angerToggle?.addEventListener("change", renderRaceChart);
+  });
+})();
 `
