@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Current Story.md",
+                "file": "Races.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Current Story"
+              "title": "Races"
             }
           }
         ]
@@ -193,6 +193,7 @@
   },
   "active": "2488849837516536",
   "lastOpenFiles": [
+    "Current Story.md",
     "Pasted image 20251009201114.png",
     "Pasted image 20251009201014.png",
     "Pasted image 20251009200549.png",
@@ -201,11 +202,9 @@
     "Pasted image 20251009200313.png",
     "Pasted image 20251009200238.png",
     "Untitled.base",
-    "Current Story.md",
     "Pasted image 20251002155431.png",
     "Pasted image 20251002155402.png",
     "Pasted image 20251002155331.png",
-    "Pasted image 20251002155206.png",
     "Factions.md",
     "Races.md",
     "Transformations.md",

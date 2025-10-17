@@ -1,7 +1,11 @@
+
+
 ## Human
 > [!race] ![[Pasted image 20250808172033.png]] Human  
-> ```chart
+> ```RaceChart
 > type: bar
+> bpm: 1.7
+> anger: 1.3
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
@@ -27,7 +31,7 @@
 
 ## Saiyan
 > [!race] ![[Pasted image 20250808172026.png]] Saiyan  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -54,7 +58,7 @@
 
 ## Namekian
 > [!race] ![[Pasted image 20250808172018.png]] Namekian  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -108,7 +112,7 @@
 
 ## Demon
 > [!race] ![[Pasted image 20250808172003.png]] Demon  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -135,7 +139,7 @@
 
 ## Tuffle
 > [!race] ![[Pasted image 20250808171959.png]] Tuffle  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -163,7 +167,7 @@
 
 ## Changeling
 > [!race] ![[Pasted image 20250808171949.png]] Changeling  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -190,7 +194,7 @@
 
 ## Oni
 > [!race] ![[Pasted image 20250808171952.png]] Oni  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -217,7 +221,7 @@
 
 ## Makyo
 > [!race] ![[Pasted image 20250808171945.png]] Makyo  
-> ```chart
+> ```RaceChart
 > type: bar
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:

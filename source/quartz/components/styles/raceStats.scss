@@ -1,0 +1,23 @@
+.race-stats {
+    margin-top: 1em;
+  }
+  
+  .race-stats-controls {
+    margin-bottom: 1em;
+    label {
+      margin-right: 1em;
+      font-weight: bold;
+    }
+  }
+  
+  .race-stats table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .race-stats th, .race-stats td {
+    border: 1px solid var(--gray);
+    padding: 0.5em;
+    text-align: left;
+  }
+  

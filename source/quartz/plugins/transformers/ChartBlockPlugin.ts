@@ -39,7 +39,7 @@ export const ChartBlockPlugin: QuartzTransformerPlugin = () => {
       return [
         () => (tree) => {
           visit(tree, "code", (node, index, parent) => {
-            if (node.lang === "chart") {
+            if (node.lang === "chart" && typeof(index) === "number") {
               const config = parseChartBlock(node.value)
               const html = `<div class="popover-hint"><canvas class="chart-block" data-chart='${JSON.stringify(config)}' width="400" height="200"></canvas></div>`
               parent.children[index] = {
