@@ -70,7 +70,6 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      ChartBlockPlugin(),
       RaceChartBlockPlugin(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),

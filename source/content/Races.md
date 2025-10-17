@@ -1,5 +1,4 @@
 
-
 ## Human
 > [!race] ![[Pasted image 20250808172033.png]] Human  
 > ```RaceChart

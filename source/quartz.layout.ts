@@ -8,7 +8,7 @@ import { RaceChartLoader } from "./quartz/components/RaceChartLoader"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [RaceChartLoader, ChartLoader],
+  afterBody: [RaceChartLoader],
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/jackyzha0/quartz",
