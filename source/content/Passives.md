@@ -2,11 +2,11 @@ A *Passive* is similar to a [[Traits|Trait]], in that it gives passive bonuses t
 
 ### Dark Energy
 > [!trait] Dark Energy  
-> A Demon's racial passive. Increases Durability and Resistance by *20%*, and reduces power loss from low energy by *30%*.
+> A Demon's racial passive. Increases Durability and Resistance by *10%*, and reduces power loss from low energy by *30%*.
 
 ### Divine Energy
 > [!trait] Divine Energy  
-> A Kaio's racial passive. Increases Offense and Defense by *20%*.
+> A Kaio's racial passive. Increases Offense and Defense by *10%*.
 
 ### Willpower
 > [!trait] Willpower  

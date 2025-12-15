@@ -9,7 +9,7 @@
 
 ### Meditation
 > [!trait] ![[Pasted image 20250808165146.png]] Meditation
-> Each rank increases Battle Power gained from Meditation by *10%*. At rank *E-* for [[Races#Human|Humans]], [[Races#Namekian|Namekians]], and [[Races#Kaio|Kaio]], or rank *E* for all other races, the character learns the [[Traits#Ki Manipulation|Ki Manipulation]] trait. At rank *D*, the character learns [[Skills#Materialization|Materialization]], and at rank *C-*, the character learns [[Skills#Telepathy|Telepathy]].
+> Each rank increases energy recovery rate by *5%* and Battle Power gained from Meditation by *10%*. At rank *E-* for [[Races#Human|Humans]], [[Races#Namekian|Namekians]], and [[Races#Kaio|Kaio]], or rank *E* for all other races, the character learns the [[Traits#Ki Manipulation|Ki Manipulation]] trait. At rank *C*, the character learns [[Skills#Materialization|Materialization]], and at rank *B*, the character learns [[Skills#Telepathy|Telepathy]]. When attack is on cooldown, the energy recovery rate bonus is disabled.
 
 ### Ki Manipulation
 > [!trait] ![[Pasted image 20250808165222.png]] Ki Manipulation

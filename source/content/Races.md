@@ -8,7 +8,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1.5, 1.5, 1.4, 1.75, 2.4, 3, 2.55, 1.9, 1.7]
+>     data: [1.5, 1.5, 1.6, 1.75, 2.4, 3, 2.55, 1.9, 1.7]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -21,7 +21,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES  | SPD | OFF | DEF  | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | ---- | --- | --- | ---- | --- | --- |
-> | 1.7 | 1.3 | 2.3 | 1.5 | 1.5 | 1.4 | 1.75 | 2.4 | 3   | 2.55 | 1.9 | 1.7 |
+> | 1.7 | 1.3 | 2.3 | 1.5 | 1.5 | 1.6 | 1.75 | 2.4 | 3   | 2.55 | 1.9 | 1.7 |
 > 
 > Passive: [[Buffs#Third Eye|Third Eye]]  
 > Transformations:  
@@ -66,7 +66,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [0.8, 2.1, 2, 2.3, 1.8, 1.6, 2.2, 3, 2]
+>     data: [0.8, 2.1, 2, 2.1, 1.9, 1.6, 2.25, 3, 2]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -79,7 +79,7 @@
 > 
 > | BP  | ANG | ENG  | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > |:---:| --- | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 1.9 | 1.3 | 3.25 | 0.8 | 2.1 | 2   | 2.3 | 1.8 | 1.6 | 2.2 | 3   | 2   |
+> | 1.9 | 1.3 | 3.25 | 0.8 | 2.1 | 2   | 2.1 | 1.9 | 1.6 | 2.25 | 3   | 2   |
 > 
 > Passive: Namekian Fusion, [[Passives#Counterpart|Counterpart]]  
 > Transformations:  
@@ -153,7 +153,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1.4, 1.4, 2.6, 2.4, 3, 2.1, 3.25, 1.9, 3]
+>     data: [1.4, 1.4, 2.6, 2.4, 3, 2.1, 3.15, 1.9, 3]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -166,7 +166,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF  | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | --- | --- |
-> | 1.6 | 1.4 | 2.5 | 1.4 | 1.4 | 2.6 | 2.4 | 3   | 2.1 | 3.25 | 1.9 | 3   |
+> | 1.6 | 1.4 | 2.5 | 1.4 | 1.4 | 2.6 | 2.4 | 3   | 2.1 | 3.15 | 1.9 | 3   |
 > 
 > Passive: [[Passives#Analysis|Analysis]]  
 > Transformations:  
@@ -178,7 +178,7 @@
 > [!race] ![[Pasted image 20250808171949.png]] Changeling  
 > ```RaceChart
 > type: bar
-> bpm: 2.3
+> bpm: 2.4
 > anger: 1.2
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
@@ -196,7 +196,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC  | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | ---- | --- | --- | --- | --- | --- | --- | --- |
-> | 2.3 | 1.2 | 2.2 | 1.1 | 1.25 | 1.6 | 1.7 | 2   | 1   | 1.2 | 2   | 2   |
+> | 2.4 | 1.2 | 2.2 | 1.1 | 1.25 | 1.6 | 1.7 | 2   | 1   | 1.2 | 2   | 2   |
 > 
 > Passive: [[Buffs#Changeling Forms|Changeling Forms]]  
 > Transformations:  
@@ -212,7 +212,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [2.5, 1.2, 2, 2, 1.6, 1.6, 1.2, 1.7, 1.3]
+>     data: [2.3, 1.2, 2, 2, 1.6, 1.6, 1.2, 1.7, 1.3]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -225,7 +225,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 1.9 | 2   | 2   | 2.5 | 1.2 | 2   | 2   | 1.6 | 1.6 | 1.2 | 1.7 | 1.3 |
+> | 1.9 | 2   | 2   | 2.3 | 1.2 | 2   | 2   | 1.6 | 1.6 | 1.2 | 1.7 | 1.3 |
 > 
 > Passive: [[Passives#Willpower|Willpower]]  
 > Transformations:  
@@ -241,7 +241,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1.6, 1.4, 1.7, 1.4, 2.6, 2, 1.5, 2.4, 1.9]
+>     data: [1.6, 1.5, 1.7, 1.4, 2.6, 2, 1.5, 2.4, 1.8]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -254,7 +254,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 2   | 1.4 | 1.8 | 1.6 | 1.4 | 1.7 | 1.4 | 2.6 | 2   | 1.5 | 2.4 | 1.9 |
+> | 2   | 1.4 | 2 | 1.6 | 1.5 | 1.7 | 1.4 | 2.6 | 2   | 1.5 | 2.4 | 1.8 |
 > 
 > Passive: [[Passives#Demonoid Physiology|Demonoid Physiology]]  
 > Transformations:  
@@ -262,17 +262,3 @@
 > - [[Transformations#Ruination|Ruination]]
 
 ---
-
-## Summary Table
-> [!race]  Data
-> | Race       | BP  | ANG | ENG  | STR | FRC  | DUR  | RES  | SPD | OFF | DEF  | RGN | RCV  |
-> | ---------- | --- | --- | ---- | --- | ---- | ---- | ---- | --- | --- | ---- | --- | ---- |
-> | Human      | 1.7 | 1.3 | 2.3  | 1.5 | 1.5  | 1.4  | 1.75 | 2.4 | 3   | 2.55 | 1.9 | 1.7  |
-> | Saiyan     | 2   | 1.5 | 1.75 | 1.3 | 1.3  | 2    | 2    | 2.1 | 1.9 | 1.4  | 1.7 | 3    |
-> | Namekian   | 1.9 | 1.3 | 3.25 | 0.8 | 2.1  | 2    | 2.3  | 1.8 | 1.6 | 2.2  | 3   | 2    |
-> | Kaio       | 2   | 1.3 | 2.8  | 1.1 | 3.25 | 1.65 | 1.5  | 2   | 2.2 | 2.3  | 1.8 | 2.75 |
-> | Demon      | 2   | 1.4 | 1.9  | 3   | 2.5  | 2    | 2.3  | 1.8 | 1.5 | 1    | 1.4 | 1.5  |
-> | Tuffle     | 1.6 | 1.4 | 2.5  | 1.4 | 1.4  | 2.6  | 2.4  | 3   | 2.1 | 3.25 | 1.9 | 3    |
-> | Changeling | 2.3 | 1.2 | 2.2  | 1.1 | 1.25 | 1.6  | 1.7  | 2   | 1   | 1.2  | 2   | 2    |
-> | Oni        | 1.9 | 2   | 2    | 2.5 | 1.2  | 2    | 2    | 1.6 | 1.6 | 1.2  | 1.7 | 1.3  |
-> | Makyo      | 2   | 1.4 | 1.8  | 1.6 | 1.4  | 1.7  | 1.4  | 2.6 | 2   | 1.5  | 2.4 | 1.9  |
