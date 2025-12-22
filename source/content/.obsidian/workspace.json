@@ -11,14 +11,14 @@
             "id": "3e5ed81c17d2988f",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "source/content/Races.md",
-                "bFile": "source/content/Races.md",
-                "aRef": ""
+                "file": "Current Story.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: Races"
+              "icon": "lucide-file",
+              "title": "Current Story"
             }
           }
         ]
@@ -191,12 +191,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "cc556fa164a050dc",
+  "active": "3e5ed81c17d2988f",
   "lastOpenFiles": [
+    "Races.md",
+    "Untitled 4.base",
     "Traits.md",
     "Passives.md",
     "Buffs.md",
-    "Races.md",
     "Untitled 3.base",
     "Untitled 2.base",
     "Skills.md",
