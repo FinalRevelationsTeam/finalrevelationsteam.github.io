@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Current Story.md",
+                "file": "Buffs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Current Story"
+              "title": "Buffs"
             }
           }
         ]
@@ -193,6 +193,7 @@
   },
   "active": "3e5ed81c17d2988f",
   "lastOpenFiles": [
+    "Current Story.md",
     "Races.md",
     "Untitled 4.base",
     "Traits.md",
@@ -202,7 +203,6 @@
     "Untitled 2.base",
     "Skills.md",
     "Untitled 1.base",
-    "Current Story.md",
     "Pasted image 20251009201114.png",
     "Pasted image 20251009201014.png",
     "Pasted image 20251009200549.png",
