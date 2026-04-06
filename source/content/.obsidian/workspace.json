@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Buffs.md",
-                "mode": "source",
-                "source": false
+                "file": "Passives.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Buffs"
+              "title": "Passives"
             }
           }
         ]
@@ -193,12 +193,15 @@
   },
   "active": "3e5ed81c17d2988f",
   "lastOpenFiles": [
-    "Current Story.md",
     "Races.md",
+    "Pasted image 20260406150900.png",
+    "Pasted image 20260406150858.png",
+    "Transformations.md",
+    "Buffs.md",
+    "Current Story.md",
     "Untitled 4.base",
     "Traits.md",
     "Passives.md",
-    "Buffs.md",
     "Untitled 3.base",
     "Untitled 2.base",
     "Skills.md",
@@ -212,10 +215,7 @@
     "Pasted image 20251009200238.png",
     "Untitled.base",
     "Pasted image 20251002155431.png",
-    "Pasted image 20251002155402.png",
-    "Pasted image 20251002155331.png",
     "Factions.md",
-    "Transformations.md",
     "Stats.md",
     "Magic.md",
     "Items.md",

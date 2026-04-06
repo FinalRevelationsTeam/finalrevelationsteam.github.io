@@ -261,4 +261,29 @@
 > - [[Transformations#Serpentine|Serpentine]]  
 > - [[Transformations#Ruination|Ruination]]
 
+## Android
+> [!race] ![[Pasted image 20260406150900.png]] Android  
+> ```RaceChart
+> type: bar
+> bpm: 2.5
+> anger: 1
+> labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
+> series:
+>   - title: MOD
+>     data: [1, 1, 2.5, 3, 2, 1.4, 1.4, 1.8, 2.5]
+> tension: 0
+> width: 50%
+> labelColors: false
+> fill: true
+> beginAtZero: true
+> bestFit: false
+> bestFitTitle: undefined
+> bestFitNumber: 0
+> ```
+> 
+> | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
+> | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+> | 2.5   | 1 | 3 | 1 | 1 | 2.5 | 3 | 2 | 1.4 | 1.4 | 1.8 | 2.5 |
+> 
+> Passive: [[Passives#Power Core|Power Core]]  
 ---

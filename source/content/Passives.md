@@ -35,3 +35,7 @@ A *Passive* is similar to a [[Traits|Trait]], in that it gives passive bonuses t
 ### Counterpart
 > [!trait] Counterpart  
 > Allows Namekian Fusion. All trait ranks are synced between the linked counterpart.
+
+### Power Core
+> [!trait] Power Core  
+> An Android's racial passive. Wounds and Fatigue are always considered to be 100% when calculating power.
