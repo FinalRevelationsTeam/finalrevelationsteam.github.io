@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Technology.md",
+                "file": "Current Story.md",
                 "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Technology"
+              "title": "Current Story"
             }
           }
         ],
@@ -208,23 +208,25 @@
   },
   "active": "9eb9a23ba4597779",
   "lastOpenFiles": [
-    "Skills.md",
-    "Technology.md",
+    "Effects.md",
     "Stats.md",
+    "Skills.md",
+    "Transformations.md",
+    "Untitled 1.base",
+    "Untitled.base",
+    "Traits.md",
+    "Technology.md",
+    "Races.md",
+    "Passives.md",
     "Buffs.md",
     "Chart Thu Aug 07 2025.png",
-    "Races.md",
     "Magic.md",
     "Pasted image 20260406150900.png",
     "Pasted image 20260406150858.png",
-    "Transformations.md",
     "Current Story.md",
     "Untitled 4.base",
-    "Traits.md",
-    "Passives.md",
     "Untitled 3.base",
     "Untitled 2.base",
-    "Untitled 1.base",
     "Pasted image 20251009201114.png",
     "Pasted image 20251009201014.png",
     "Pasted image 20251009200549.png",
@@ -232,7 +234,6 @@
     "Pasted image 20251009200332.png",
     "Pasted image 20251009200313.png",
     "Pasted image 20251009200238.png",
-    "Untitled.base",
     "Factions.md",
     "Items.md",
     "index.md",
