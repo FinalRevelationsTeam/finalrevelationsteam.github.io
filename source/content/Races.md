@@ -8,7 +8,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1.5, 1.5, 1.6, 1.75, 2.4, 3, 2.55, 1.9, 1.7]
+>     data: [1.5, 1.5, 1.6, 1.75, 2.5, 3, 2.55, 1.9, 1.7]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -21,7 +21,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES  | SPD | OFF | DEF  | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | ---- | --- | --- | ---- | --- | --- |
-> | 1.7 | 1.3 | 2.3 | 1.5 | 1.5 | 1.6 | 1.75 | 2.4 | 3   | 2.55 | 1.9 | 1.7 |
+> | 1.7 | 1.3 | 2.3 | 1.5 | 1.5 | 1.6 | 1.75 | 2.5 | 3 | 2.55 | 1.9 | 1.7 |
 > 
 > Passive: [[Buffs#Third Eye|Third Eye]]  
 > Transformations:  
@@ -66,7 +66,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [0.8, 2.1, 2, 2.1, 1.9, 1.6, 2.25, 3, 2]
+>     data: [0.8, 2.1, 2, 2.1, 1.9, 1.75, 2.25, 3, 2.3]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -79,7 +79,7 @@
 > 
 > | BP  | ANG | ENG  | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > |:---:| --- | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 1.9 | 1.3 | 3.25 | 0.8 | 2.1 | 2   | 2.1 | 1.9 | 1.6 | 2.25 | 3   | 2   |
+> | 1.9 | 1.3 | 3.25 | 0.8 | 2.1 | 2   | 2.1 | 1.9 | 1.75 | 2.25 | 3 | 2.3 |
 > 
 > Passive: Namekian Fusion, [[Passives#Counterpart|Counterpart]]  
 > Transformations:  
@@ -108,7 +108,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC  | DUR  | RES | SPD | OFF | DEF | RGN | RCV  |
 > | --- | --- | --- | --- | ---- | ---- | --- | --- | --- | --- | --- | ---- |
-> | 2   | 1.3 | 2.8 | 1.1 | 3.25 | 1.65 | 1.5 | 2   | 2.2 | 2.3 | 1.8 | 2.75 |
+> | 2   | 1.3 | 2.8 | 1.1 | 3.25 | 1.65 | 1.5 | 2 | 2.2 | 2.3 | 1.8 | 2.75 |
 > 
 > Passive: [[Passives#Divine Energy|Divine Energy]], [[Buffs#Mystic|Mystic]]  
 > Transformations:  
@@ -124,7 +124,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [3, 2.5, 2, 2.3, 1.8, 1.5, 1, 1.4, 1.5]
+>     data: [3, 2.5, 2, 2.6, 1.8, 1.5, 1, 1.4, 1.5]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -137,7 +137,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 2   | 1.4 | 1.9 | 3   | 2.5 | 2   | 2.3 | 1.8 | 1.5 | 1   | 1.4 | 1.5 |
+> | 2   | 1.4 | 1.9 | 3 | 2.5 | 2 | 2.6 | 1.8 | 1.5 | 1 | 1.4 | 1.5 |
 > 
 > Passive: [[Passives#Dark Energy|Dark Energy]], [[Buffs#Majin|Majin]]  
 > Transformations:  
@@ -153,7 +153,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1.4, 1.4, 2.6, 2.4, 3, 2.1, 3.15, 1.9, 3]
+>     data: [1.4, 1.4, 2.6, 2.4, 2.7, 2.1, 3.15, 1.9, 2.75]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -166,7 +166,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF  | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---- | --- | --- |
-> | 1.6 | 1.4 | 2.5 | 1.4 | 1.4 | 2.6 | 2.4 | 3   | 2.1 | 3.15 | 1.9 | 3   |
+> | 1.6 | 1.4 | 2.5 | 1.4 | 1.4 | 2.6 | 2.4 | 2.7   | 2.1 | 3.15 | 1.9 | 2.75   |
 > 
 > Passive: [[Passives#Analysis|Analysis]]  
 > Transformations:  
@@ -212,7 +212,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [2.3, 1.2, 2, 2, 1.6, 1.6, 1.2, 1.7, 1.3]
+>     data: [2, 1.2, 2, 2, 1.6, 1.6, 1.2, 1.7, 1.3]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -225,7 +225,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 1.9 | 2   | 2   | 2.3 | 1.2 | 2   | 2   | 1.6 | 1.6 | 1.2 | 1.7 | 1.3 |
+> | 1.9 | 2   | 2   | 2 | 1.2 | 2   | 2   | 1.6 | 1.6 | 1.2 | 1.7 | 1.3 |
 > 
 > Passive: [[Passives#Willpower|Willpower]]  
 > Transformations:  
@@ -270,7 +270,7 @@
 > labels: [STR, FRC, DUR, RES, SPD, OFF, DEF, RGN, RCV]
 > series:
 >   - title: MOD
->     data: [1, 1, 2.5, 3, 2, 1.4, 1.4, 1.8, 2.5]
+>     data: [1, 1, 2.5, 3, 2, 1.4, 1.6, 1.8, 2.5]
 > tension: 0
 > width: 50%
 > labelColors: false
@@ -283,7 +283,7 @@
 > 
 > | BP  | ANG | ENG | STR | FRC | DUR | RES | SPD | OFF | DEF | RGN | RCV |
 > | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-> | 2.5   | 1 | 3 | 1 | 1 | 2.5 | 3 | 2 | 1.4 | 1.4 | 1.8 | 2.5 |
+> | 2.5   | 1 | 3 | 1 | 1 | 2.5 | 3 | 2 | 1.6 | 1.4 | 1.8 | 2.5 |
 > 
 > Passive: [[Passives#Power Core|Power Core]]  
 ---

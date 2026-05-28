@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Passives.md",
-                "mode": "preview",
+                "file": "Races.md",
+                "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Passives"
-            }
-          },
-          {
-            "id": "9eb9a23ba4597779",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Current Story.md",
-                "mode": "preview",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Current Story"
+              "title": "Races"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -206,8 +191,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9eb9a23ba4597779",
+  "active": "3e5ed81c17d2988f",
   "lastOpenFiles": [
+    "Passives.md",
+    "Untitled 5.base",
+    "Current Story.md",
     "Effects.md",
     "Stats.md",
     "Skills.md",
@@ -217,13 +205,11 @@
     "Traits.md",
     "Technology.md",
     "Races.md",
-    "Passives.md",
     "Buffs.md",
     "Chart Thu Aug 07 2025.png",
     "Magic.md",
     "Pasted image 20260406150900.png",
     "Pasted image 20260406150858.png",
-    "Current Story.md",
     "Untitled 4.base",
     "Untitled 3.base",
     "Untitled 2.base",
